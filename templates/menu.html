@@ -1,0 +1,59 @@
+{#{% load menu_tags %}#}
+{#<ul>#}
+{#    {% for node in menu_tree %}#}
+{#        <li class="{% if node.is_active %}active{% endif %} {% if node.is_open %}open{% endif %}">#}
+{#            <a href="{{ node.item.get_absolute_url }}">{{ node.item.title }}</a>#}
+{#            {% if node.children %}#}
+{#                {% include 'menu.html' with menu_tree=node.children %}#}
+{#            {% endif %}#}
+{#        </li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+
+<!-- menu/templates/menu/menu.html -->
+
+{#<div>#}
+{#    {% for menu_data in menu_trees %}#}
+{#        <h2>{{ menu_data.menu.title }}</h2>#}
+{#        <ul>#}
+{#            {% for node in menu_data.tree %}#}
+{#                <li class="{% if node.is_active %}active{% endif %} {% if node.is_open %}open{% endif %}">#}
+{#                    <a href="{{ node.item.get_absolute_url }}">{{ node.item.title }}</a>#}
+{#                    {% if node.children %}#}
+{#                        <ul>#}
+{#                            {% include 'menu.html' with menu_tree=node.children %}#}
+{#                        </ul>#}
+{#                    {% endif %}#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    {% endfor %}#}
+{#</div>#}
+
+
+<!-- menu/templates/menu/menu.html -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    {% for node in menu_tree %}
+        <li class="{% if node.is_active %}active{% endif %} {% if node.is_open %}open{% endif %}">
+            <a href="{{ node.item.get_absolute_url }}">{{ node.item.title }}</a>
+            {% if node.children %}
+                {% include 'menu.html' with menu_tree=node.children %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
