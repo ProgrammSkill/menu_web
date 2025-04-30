@@ -10,3 +10,13 @@
 8)На отрисовку каждого меню требуется ровно 1 запрос к БД
  Нужен django-app, который позволяет вносить в БД меню (одно или несколько) через админку, и нарисовать на любой нужной странице меню по названию.
  {% draw_menu 'main_menu' %}
+
+
+Используется БД PostgresQL
+
+URL адреса:
+path('russian-menu/', TemplateView.as_view(template_name='russian_menu.html')),
+path('aziat-menu/', TemplateView.as_view(template_name='aziat_menu.html')),
+path('alko-menu/', TemplateView.as_view(template_name='alko-menu.html')),
+
+
